@@ -237,8 +237,10 @@ import Mpegts from "mpegts.js";
 import Hls from 'hls.js';
 
 const autoPlayNextVideo = useStorage('zfile-video-auto-player-next', false);
-const autoPlayVideo = useStorage('zfile-video-auto-player', false);
-const hiddenTools = useStorage('zfile-video-hiddle-tools', false);
+const autoPlayVideo = useStorage('zfile-video-auto-player', true);
+const hiddenTools = useStorage('zfile-video-hiddle-tools', true);
+// const autoPlayVideo = true;
+// const hiddenTools = true;
 
 let art = null;
 const initArtPlayer = async (name, url) => {
