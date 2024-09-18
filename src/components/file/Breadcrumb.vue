@@ -217,6 +217,7 @@ const getElementWidth = (element) => {
   }
   .z-breadcrumbs__text {
     @apply ml-3 text-[13px] font-semibold text-gray-600 hover:text-gray-700;
+    color: #adadad;
 
     &.disable {
       @apply text-gray-400 pointer-events-none;

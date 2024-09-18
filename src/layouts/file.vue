@@ -10,7 +10,7 @@
 		<el-main :class="'el-main-' + storageConfigStore.globalConfig?.layout">
 			<router-view />
 		</el-main>
-		<el-footer>
+		<el-footer height="auto">
 			<Footer></Footer>
 		</el-footer>
 	</el-container>
@@ -69,17 +69,27 @@ const loadGlobalSiteSetting = () => {
 	height: 100%;
 	width: 100%;
 
-	.el-header,
-	.el-footer {
+	:deep(.el-header),
+	:deep(.el-footer),
+	:deep(.el-main) {
+		background-color: var(--el-bg-color);
 		color: var(--el-text-color-primary);
-		padding: 0;
-		text-align: center;
 	}
 
-	.el-header {
-		--el-header-height: unset;
-		height: 48px;
-		line-height: 48px !important;
+	/* 特别针对暗色模式的样式 */
+	&:deep(.dark *) {
+		.el-header,
+		.el-footer {
+			background-color: var(--el-bg-color);
+			color: var(--el-text-color-primary);
+		}
+	}
+
+	/* 添加这个特定的选择器 */
+	&:deep(.el-header:is(.dark *)),
+	&:deep(.el-footer:is(.dark *)) {
+		background-color: var(--el-bg-color);
+		color: var(--el-text-color-primary);
 	}
 
 	// 去除文件区 padding
@@ -90,9 +100,9 @@ const loadGlobalSiteSetting = () => {
 		overflow-x: hidden;
 	}
 
-  .el-main-card {
-    @apply bg-gray-100;
-  }
+	.el-main-card {
+		@apply bg-gray-100;
+	}
 
 	// 定义脚部高度，边框
 	.el-footer {
@@ -101,5 +111,9 @@ const loadGlobalSiteSetting = () => {
 		line-height: 40px;
 		font-size: 14px;
 	}
+}
+.el-table {
+	--el-table-text-color: #adadad;
+	--el-table-header-text-color: #adadad;
 }
 </style>

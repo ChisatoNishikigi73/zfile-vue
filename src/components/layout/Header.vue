@@ -265,21 +265,19 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-
 .zfile-header {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	height: 48px;
-	line-height: 48px !important;
-	padding: 0 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 48px;
+  line-height: 48px !important;
+  padding: 0 15px;
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  border-bottom: 1px solid var(--el-border-color-light);
 
-	background-color: #ffffff;
-	color: #606266;
-	transition: border-color var(--el-transition-duration), background-color var(--el-transition-duration);
-	border-bottom: 1px solid rgba(132, 133, 141, 0.2);
-
-	.el-scrollbar {
+  .el-scrollbar {
     @apply w-full;
 		:deep(.el-scrollbar__bar.is-vertical) {
 			display: none !important;
@@ -361,5 +359,29 @@ onMounted(() => {
 	.el-dropdown-menu__item:hover svg {
 		@apply text-blue-500
 	}
+}
+
+.zfile-header {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
+  border-bottom: 1px solid var(--el-border-color-light);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.el-menu {
+  background-color: transparent !important;
+  border-bottom: none !important;
+
+  .el-menu-item {
+    color: var(--el-text-color-regular);
+
+    &:hover, &:focus {
+      background-color: var(--el-fill-color-light);
+    }
+
+    &.is-active {
+      color: var(--el-color-primary);
+    }
+  }
 }
 </style>

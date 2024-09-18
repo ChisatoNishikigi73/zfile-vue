@@ -450,6 +450,10 @@ const showDialog = (readmeText) => {
   }
 
   :deep(.el-checkbox) {
+    --el-color-primary: #00000000;
+    --el-fill-color-light: #00000000;
+    --el-checkbox-checked-input-border-color: #b4b4b4;
+    --el-checkbox-input-border-color-hover: #fffefe8f;
     margin-right: 30px;
   }
 
