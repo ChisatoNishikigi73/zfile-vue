@@ -1,4 +1,4 @@
-import { removeDuplicateSlashes } from "fast-glob/out/managers/patterns";
+const removeDuplicateSlashes = (path) => path.replace(/\/+/g, '/');
 import useHeaderStorageList from "./useHeaderStorageList";
 
 import useStorageConfigStore from "~/stores/storage-config";

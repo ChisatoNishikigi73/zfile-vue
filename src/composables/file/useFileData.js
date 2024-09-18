@@ -2,7 +2,7 @@ import {ElMessage} from "element-plus";
 import MessageBox from "~/components/messageBox/messageBox";
 
 import path from "path-browserify";
-import {removeDuplicateSlashes} from "fast-glob/out/managers/patterns";
+const removeDuplicateSlashes = (path) => path.replace(/\/+/g, '/');
 
 import {loadFileListReq, loadStorageConfigReq} from "~/api/home";
 

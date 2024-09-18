@@ -1,6 +1,6 @@
 import minimatch from "minimatch";
 import useRouterData from "~/composables/useRouterData";
-import { removeDuplicateSlashes } from "fast-glob/out/managers/patterns";
+const removeDuplicateSlashes = (path) => path.replace(/\/+/g, '/');
 import common from "~/common";
 let { storageKey, currentPath } = useRouterData()
 

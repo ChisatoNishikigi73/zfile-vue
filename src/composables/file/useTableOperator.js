@@ -1,5 +1,5 @@
 import { useKeyModifier } from '@vueuse/core'
-import {removeDuplicateSlashes} from "fast-glob/out/managers/patterns";
+const removeDuplicateSlashes = (path) => path.replace(/\/+/g, '/');
 
 import useGlobalConfigStore from "~/stores/global-config";
 let globalConfigStore = useGlobalConfigStore();
