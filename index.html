@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" id="favicon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="referrer" content="same-origin" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
@@ -13,6 +13,16 @@
             const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
             if (setting === 'dark' || (prefersDark && setting !== 'light'))
                 document.documentElement.classList.toggle('dark', true)
+
+            // 添加页面可见性变化监听
+            let originalTitle = document.querySelector('title').textContent;
+            document.addEventListener("visibilitychange", function() {
+                if (document.hidden) {
+                    document.querySelector('title').textContent = "不要走嘛 - " + originalTitle;
+                } else {
+                    document.querySelector('title').textContent = "嘿嘿...回来了呀";
+                }
+            });
         })()
     </script>
 </head>
